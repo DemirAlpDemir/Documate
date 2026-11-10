@@ -1,0 +1,52 @@
+
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DocuMate</title>
+<style>
+body {
+  font-family: Arial, sans-serif;
+  background: #f1f5f9;
+  margin: 0;
+  padding: 30px 15px;
+  color: #172554;
+}
+.container {
+  max-width: 600px;
+  margin: auto;
+  background: white;
+  padding: 25px;
+  border-radius: 18px;
+  text-align: center;
+}
+h1 { color: #2563eb; }
+button {
+  background: #2563eb;
+  color: white;
+  border: 0;
+  padding: 13px 22px;
+  border-radius: 10px;
+  font-size: 16px;
+}
+</style>
+</head>
+<body>
+<div class="container">
+  <h1>DocuMate</h1>
+  <p>Akıllı belge yönetim sistemine hoş geldin.</p>
+  <h3>Belgelerini kolayca yönet.</h3>
+  <input type="file" id="file">
+  <p id="status">Henüz belge seçilmedi.</p>
+  <button onclick="upload()">Belge seç</button>
+</div>
+<script>
+function upload() {
+  const file = document.getElementById('file').files[0];
+  document.getElementById('status').textContent =
+    file ? file.name + ' seçildi.' : 'Lütfen bir belge seç.';
+}
+</script>
+</body>
+</html>
